@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="icon" href="pictureicon.png" type="image/x-icon">
+    <title>Image Grid</title>
+</head>
+<body>
+    <h1 class="page-title">Nyuienyo🧸💕</h1>
+    <div class="container">
+        <div class="box box-1" style="--img:url('cake.jpg');" data-text="Cake" onclick="toggleDetails('details-1', this)"></div>
+        <div id="details-1" class="details" onclick="closeDetails()">cake:The birthday girl about to eat her cake🤭.</div>
+
+        <div class="box box-2" style="--img:url('jeans.jpg');" data-text="Jeans" onclick="toggleDetails('details-2', this)"></div>
+        <div id="details-2" class="details" onclick="closeDetails()">Jeans: Have no idea why shes showing her jeans😔.</div>
+
+        <div class="box box-3" style="--img:url('spongbob.jpg');" data-text="Spongebob" onclick="toggleDetails('details-3', this)"></div>
+        <div id="details-3" class="details" onclick="closeDetails()">Jtalen: The best cartoon to ever exist please!!!!!!.</div>
+
+        <div class="box box-4" style="--img:url('quick_snack.jpg');" data-text="biscuit and drink" onclick="toggleDetails('details-4', this)"></div>
+        <div id="details-4" class="details" onclick="closeDetails()">snack: quick quick quick quick midnight snack.</div>
+
+        <div class="box box-5" style="--img:url('legs.jpg');" data-text="Some leds" onclick="toggleDetails('details-5', this)"></div>
+        <div id="details-5" class="details" onclick="closeDetails()">Deadpool:Probably some of the nicerest legs youll find😭.</div>
+    </div>
+
+    <script>
+        function toggleDetails(selectedId, clickedElement) {
+            // Hide all details and darken all images
+            const detailsElements = document.querySelectorAll('.details');
+            const boxes = document.querySelectorAll('.box');
+            detailsElements.forEach(element => {
+                element.style.display = 'none';
+            });
+            boxes.forEach(box => {
+                box.classList.add('dark');
+            });
+
+            // Show the selected details and brighten the selected image
+            const selectedDetails = document.getElementById(selectedId);
+            selectedDetails.style.display = 'flex';  // Changed to 'flex' for better centering
+            clickedElement.classList.remove('dark');
+        }
+
+        function closeDetails() {
+            // Hide all details and restore the dark effect on all images
+            const detailsElements = document.querySelectorAll('.details');
+            const boxes = document.querySelectorAll('.box');
+            detailsElements.forEach(element => {
+                element.style.display = 'none';
+            });
+            boxes.forEach(box => {
+                box.classList.add('dark');
+            });
+        }
+    </script>
+</body>
+</html>
